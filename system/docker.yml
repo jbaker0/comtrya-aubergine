@@ -1,0 +1,12 @@
+actions:
+  - action: package.install
+    list:
+      - "docker"
+
+  - action: command.run
+    privileged: true
+    command: systemctl
+    args:
+      - "enable"
+      - "--now"
+      - "docker"
