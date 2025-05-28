@@ -1,0 +1,7 @@
+depends:
+  - system.external_disk
+
+actions:
+  - action: git.clone
+    repo_url: git@github.com:jbaker0/compose-aubergine.git
+    directory: /mnt/ujo
