@@ -1,5 +1,5 @@
-depends:
-  - system.external_disk
+#depends:
+#  - system.external_disk
 
 actions:
   - action: git.clone
