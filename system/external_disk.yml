@@ -1,0 +1,42 @@
+actions:
+  - action: command.run
+    privileged: true
+    command: parted
+    args:
+      - "-s"
+      - "/dev/sdb"
+      - "mklabel"
+      - "gpt"
+
+  - action: command.run
+    privileged: true
+    command: parted
+    args:
+      - "-s"
+      - "/dev/sdb"
+      - "mkpart"
+      - "primary"
+      - "btrfs"
+      - "0%"
+      - "100%"
+
+  - action: command.run
+    privileged: true
+    command: mkfs.btrfs
+    args:
+      - "-f"
+      - "/dev/sdb1"
+
+  - action: command.run
+    privileged: true
+    command: mkdir
+    args:
+      - "-p"
+      - "/mnt/ujo"
+
+  - action: command.run
+    privileged: true
+    command: mount
+    args:
+      - "/dev/sdb1"
+      - "/mnt/ujo"
