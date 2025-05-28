@@ -12,3 +12,8 @@ actions:
       - "enable"
       - "--now"
       - "docker"
+
+  - action: user.group
+    username: "{{ user.username }}"
+    group:
+      - docker
