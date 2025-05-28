@@ -2,6 +2,8 @@ actions:
   - action: package.install
     list:
       - "docker"
+      - "docker-compose"
+      - "docker-buildx"
 
   - action: command.run
     privileged: true
